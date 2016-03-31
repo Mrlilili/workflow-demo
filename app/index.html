@@ -4,20 +4,31 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <!-- bower:js -->
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
-    <!-- endbower -->
+    <script src="../bower_components/seajs/dist/sea.js"></script>
 </head>
 <body>
-<div class="active">1</div>
-<div>2</div>
-<div>3</div>
-<div>4</div>
-<div>5</div>
-<div>6</div>
-<div>7</div>
-<div>8</div>
-<div>9</div>
+<div class="lotteryContainer">
+    <div class="active">1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+</div>
 
+<button class="start">开始</button>
+<script>
+    seajs.config({
+        base: './bower_components/',
+        alias: {
+            'jquery': 'jquery/jquery.js'
+        }
+    });
+
+    seajs.use('./app/scripts/main');
+</script>
 </body>
 </html>
