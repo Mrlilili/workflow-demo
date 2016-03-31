@@ -42,6 +42,8 @@ define(function (require, exports, module) {
                 }
             }
             roll();
+
+
         }
     };
     module.exports = DrawLottery;
