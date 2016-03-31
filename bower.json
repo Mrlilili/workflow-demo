@@ -2,8 +2,9 @@
   "name": "my-gulp-livereload",
   "private": true,
   "dependencies": {
-    "jquery": "^2.2.2",
-    "seajs": "^3.0.0"
+    "jquery": "1.9.1",
+    "seajs": "^3.0.0",
+    "artDialog": "^6.0.4"
   },
   "devDependencies": {}
 }
