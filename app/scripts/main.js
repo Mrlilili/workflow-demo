@@ -3,7 +3,7 @@
  * fas
  */
 define(function (require, exports, module) {
-    //var t = require('./DrawLottery');
     var $ = require('jquery');
-    console.log($);
+    var t = require('./DrawLottery');
+    new t('lotteryContainer', 'start');
 });

@@ -1,7 +1,7 @@
 .lotteryContainer div {
     height: 100px;
     width: 100px;
-    border: 2px solid red;
+    border: 10px solid red;
     margin: 10px;
     display: inline-block;
     line-height: 100px;
