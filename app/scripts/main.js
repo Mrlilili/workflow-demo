@@ -5,5 +5,9 @@
 define(function (require, exports, module) {
     var $ = require('jquery');
     var t = require('./DrawLottery');
-    new t('lotteryContainer', 'start');
+   var test =  new t('lotteryContainer', 'start');
+    test.rollSetting.index = 0;
+    test.rollSetting.speed = 50;
+    test.rollSetting.times = 6;
+    test.rollSetting.prize = 6;
 });
