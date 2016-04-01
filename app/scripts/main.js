@@ -8,6 +8,6 @@ define(function (require, exports, module) {
    var test =  new t('lotteryContainer', 'start');
     test.rollSetting.index = 0;
     test.rollSetting.speed = 50;
-    test.rollSetting.times = 6;
+    test.rollSetting.times = 2;
     test.rollSetting.prize = 6;
 });

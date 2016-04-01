@@ -13,25 +13,28 @@ define(function (require, exports, module) {
             speed: 50,//初始转动速度
             times: 5,//转动次数
             prize: 5,//中奖位置
-        }
+        };
         this.init();//初始化
     };
     DrawLottery.prototype = {
         init: function () {
             var self = this;
-            this.$SB.on('click', function () {//绑定抽奖交互事件
+            this.t = function () {
                 self.action();
-            });
+                self.$SB.unbind('click', self.t);
+            };
+            self.$SB.bind('click', self.t);
         },
         /**
          * 抽奖交互事件
          */
         action: function () {
+            console.log('action');
             var self = this;
             var $LC_child = self.$LC.find('div');//获得奖项容器里面的元素数组
             var $LC_childLength = $LC_child.length;//容器子元素个数
-            var setting = self.rollSetting;//拿到配置参数（再写一次的是为了方便调用）
-
+            var setting = {}//配置参数
+            $.extend(setting, self.rollSetting);//copy 配置对象
             /**
              * 实现交互
              */
@@ -48,14 +51,15 @@ define(function (require, exports, module) {
                 if (setting.times == 1) {//最后一圈的时候，如果位置等于奖品位置停止旋转
                     if (setting.index != setting.prize) {
                         setTimeout(roll, setting.speed);
+                    } else {
+                        self.$SB.bind('click', self.t);
                     }
                 } else {
                     setTimeout(roll, setting.speed);
                 }
             }
+
             roll();
-
-
         }
     };
     module.exports = DrawLottery;
