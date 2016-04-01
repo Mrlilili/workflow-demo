@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!--<script src="../bower_components/jquery/jquery.js"></script>-->
+    <script src="./scripts/lib/sea.js"></script>
 </head>
 <body>
+<script>
+    seajs.config({
+        base: './scripts/',
+        alias: {
+            'jquery': 'http://res.yy.com/common/js/jquery/1.9.1/jquery.js',
+            'dialog':'lib/dialog'
+        }
+    });
 
+    seajs.use('./scripts/dialog/main');
+</script>
 </body>
 </html>

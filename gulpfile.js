@@ -7,10 +7,10 @@ var $ = require('gulp-load-plugins')();
 gulp.task('connect', function () {
     var connect = require('connect');
     var app = connect()
-        .use(require('connect-livereload')({ port: 35729 }))
+        .use(require('connect-livereload')({port: 35729}))
         .use(connect.static('app'))
         .use(connect.static('./'))
-        //.use(connect.directory('app'));
+    //.use(connect.directory('app'));
 
     require('http').createServer(app)
         .listen(9000)
@@ -18,12 +18,15 @@ gulp.task('connect', function () {
             console.log('Started connect web server on http://localhost:9000');
         });
 });
-
+gulp.task('move', function () {
+    gulp.src(['bower_components/seajs/dist/sea.js', 'bower_components/artDialog/src/dialog.js', 'bower_components/artDialog/src/dialog-config.js', 'bower_components/artDialog/src/popup.js', 'bower_components/jquery/jquery.js'])
+        .pipe(gulp.dest('app/scripts/lib/'));
+});
 gulp.task('serve', ['connect'], function () {
     require('opn')('http://localhost:9000');
 });
 
-gulp.task('bowerInstall',function(){
+gulp.task('bowerInstall', function () {
     gulp.src('./app/index.html')
         .pipe(wiredep({
             optional: 'configuration',
@@ -32,7 +35,7 @@ gulp.task('bowerInstall',function(){
         .pipe(gulp.dest('./app/'));
 });
 
-gulp.task('watch', ['connect', 'serve','bowerInstall'], function () {
+gulp.task('watch', ['connect', 'serve', 'bowerInstall'], function () {
     var server = $.livereload();
 
     gulp.watch([

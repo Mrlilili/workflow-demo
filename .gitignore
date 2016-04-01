@@ -10,3 +10,4 @@ gen
 bower_components
 node_modules
 .editorconfig
+app/scripts/lib

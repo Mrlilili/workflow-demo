@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "jquery": "1.9.1",
-    "seajs": "^3.0.0",
+    "seajs": "2.1.1",
     "artDialog": "^6.0.4"
   },
   "devDependencies": {}
